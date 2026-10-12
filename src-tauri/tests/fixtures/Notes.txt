@@ -1,0 +1,98 @@
+List yang belum dikerjakan:
+- Research mengenai AI untuk pengingat tugas karyawan via erp.example.com serta kebutuhan hardware misalnya pakai jetson seri apa karena akan self-hosted di kantor tanpa vendor luar.
+- buat skrip auto ganti dns provider saat pindah jaringan dari kantor ke rumah.
+- setting email server synology dan config tunnel cloudflare untuk subdomain internal.
+- buat tim kecil untuk persiapan rekrutmen engineer, perencanaan device, dan hunting talent.
+- Semua email smtp pada aplikasi dicek ulang dan memakai alamat yang tepat per unit (erp.example.com, karir.example.com, toko.example.com).
+- Mode antrian tidak saya jalankan. Mode sinkron sudah jauh di bawah target, dan worker belum terpasang.
+- Kondisi server uji: data dev kecil (14 dokumen) dan laptop dev jauh lebih cepat dari NAS. Uji beban perlu diulang di staging dengan data penuh.
+- standar perhitungan lembur dan payroll yang terhubung dengan sistem absensi. jelaskan juga skema potongan dan tunjangan yang umum dipakai.
+- susun panduan prompting untuk pengembangan erp mulai dari alur kerja, efektivitas, ui/ux, sampai efisiensi biaya.
+- Ketika hasil crawling website approval.example.com sudah jadi markdown, ambil daftar halaman dan buat peta fitur untuk dokumentasi.
+
+
+List yang sudah dikerjakan:
+- Project ada di sidebar.
+- tambahkan ringkasan kas operasional di dashboard.
+- Buat planning jadwal sebulan untuk rebuild sistem approval.
+- Buat penyesuaian sidebar per menu terlihat seperti per modul yang dapat dipakai untuk hak akses agar daftar menu tidak terlalu panjang.
+- untuk kontrak buatkan sama dengan menu project, lalu gabungkan umum, kontrak, dan kebijakan menjadi SOP dan kebijakan.
+- membuat laporan khusus pada dashboard untuk semua unit atau per unit.
+- tambahkan operasional yang terhubung dengan project dan kontrak di sidebar.
+- Cari referensi atau buatkan kerangka website absensi dengan fitur lengkap seperti fingerprint, geolocation, dan swafoto.
+- lanjutkan halaman admin approval untuk perbaikan double scrolling chat.
+- cari monitor tambahan untuk ruang rapat.
+- MFA/OTP, SSO Google, dan reCAPTCHA.
+- Lupa password lewat email: halamannya masih mockup.
+- Pemilih unit: data halaman lain belum difilter per unit.
+- Jejak audit perubahan peran.
+- Matriks approval (alur approval), karena workflow memakai peran yang baru dibuat.
+- CRUD untuk 20 halaman master data (tabel sudah ada, halaman masih data contoh).
+- Form untuk tipe dokumen selain PR/PO, termasuk pencatatan otomatis ke buku hutang.
+- Notifikasi email/WA.
+- Ubah draft dari halaman detail. Saat ini "Ajukan ulang" mengirim isi yang sama.
+- Rekening bank untuk eksekusi masih diambil dari file config, belum dari master data.
+- Widget dashboard untuk penjualan, kas, piutang, dan risiko masih data contoh. Di halaman ditandai "Sebagian data contoh".
+- buat SPA untuk sidebar, header, dan konten agar halaman tidak reload saat ada aksi, apakah memungkinkan?
+- uji fitur POP3 sendiri.
+- pada kartu neto operasi di dashboard ada garis putus-putus yang kurang rapi, tolong rapikan.
+- tambahkan menu arus kas di sidebar agar sama dengan halaman utama laporan kas, lalu sesuaikan folder resources untuk modul tersebut.
+- atur responsive di laporan harian mulai dari daftar, detail, sampai form tambah.
+- cek ulang kerapian halaman My Approval dari sisi responsive dan konsistensi ui dengan halaman lain yang sudah berjalan.
+- gunakan pesan error yang mudah dipahami saat user berinteraksi dengan fokus pada ux yang jelas dan tidak teknis.
+- buatkan rencana untuk menyelesaikan fitur penuh dengan integrasi backend-frontend, middleware, dan rbac untuk semua modul.
+- rapikan cetak pdf pada detail laporan harian agar tetap rapi dan responsive ketika dicetak.
+- lengkapi semua fitur pada modul arus kas dengan data terintegrasi, lalu hilangkan kode sub menu yang tidak perlu.
+- selalu update tracking setiap selesai satu prompting, lalu bekerja sesuai peran programmer pada tahap development.
+- tambahkan fitur generate password aman saat tambah admin.
+- cek ulang halaman lain yang punya cetak pdf dan belum dirapikan selain laporan harian.
+- ke depan akan banyak fitur baru yang memakai runner FrankenPHP, cek apakah stack sekarang mendukung tanpa perubahan besar.
+- hilangkan tombol JSON pada detail My Approval karena user tidak perlu melihat data teknis.
+- lanjutkan uji browser untuk modul baru.
+- perbaiki tiga celah keamanan.
+- Tombol Ekspor dan Cetak di tiap halaman.
+- Kolom Proyek di form pengajuan. Sampai kolom ini ada, proyek hanya terisi lewat klien proyek.
+- Laba Rugi, Neraca, Perubahan Ekuitas, dan Budget vs Actual bertanda "Belum tersedia", karena datanya belum ada di sistem.
+- tambahkan persentase total progress pada tracking gantt chart.
+- perbaiki double scrolling pada halaman admin check, cek juga halaman lain, lalu masukkan ke catatan perbaikan.
+- data dummy bisa dicek via approval.example.com untuk membuat seeder dari data yang sudah ada.
+- Belum dikerjakan: stok untuk Pengiriman dan Retur. Bagian ini menunggu modul Persediaan & Gudang yang dijadwalkan pada fase berikutnya.
+- Retur Supplier dan Laporan Pembelian Harian pada modul Pembelian & Hutang Supplier.
+- Perencanaan Pembayaran, Permintaan Pengeluaran, Mutasi Kas/Bank, dan Rekap Arus Kas Harian pada modul Kas, Bank, & Anggaran.
+- Modul Management Alert.
+- Buku Biaya, Konsumsi Bahan, Produksi Setengah Jadi, Daftar Aset, Depresiasi Aset, Pinjaman Karyawan, dan siklus hidup aset.
+- Modul Produksi & Operasional.
+- Modul Aset.
+- Modul Project.
+- Buatkan website karir.example.com beserta admin panel untuk mendata pelamar yang melamar di semua unit.
+- http://127.0.0.1:8000/admin/approval/payment/create dan http://127.0.0.1:8000/admin/approval/cashflow/create masih error 500, cek validasi form.
+- ringkas sidebar menu menjadi grup command center, finance, operations, governance, reporting, dan system agar mudah dicari.
+- Modul SDM, Payroll & Pinjaman.
+- Modul Kontrak.
+- Modul Document Center.
+- Modul Settings.
+- Notifikasi.
+- Cari menu di sidebar yang saling terhubung saat diklik, contohnya menu Piutang Customer pada modul Report Center.
+- cek ulang urutan pendidikan pelamar pada admin lalu redeploy.
+- Pada modul arus kas dan Management Alert hilangkan breadcrumb di kartu filter agar tampilan lebih bersih.
+- deploy recruitment portal karir.example.com via web-station.
+- bersihkan file dev pada karir.example.com dan pasang git.
+- buatkan dokumentasi markdown dari hasil analisa folder Task Management agar mudah dibaca tim.
+- tambahkan tanda tangan digital beserta tanggal pada dokumen approval. sebelum itu, diskusikan tech stack yang dipakai.
+- perlebar tabel di halaman hak akses agar kolom peran lebih lega dibanding membuka halaman baru.
+- pada sidebar, buat tipografi judul grup sub-menu yang mudah dibedakan secara visual.
+- bug saat search umum di erp.
+- buat skenario nyata untuk erp per peran, sebelum itu bersihkan semua data agar seperti baru pertama kali deploy.
+- develop landing page toko.example.com dari sumber di synology nas shared folder "Data Web".
+- pada landing page toko.example.com hapus header kiri agar bisa ditambah tombol karir ke karir.example.com.
+- tambahkan tampilan pdf untuk dokumen di browser pada erp.
+- cek update task yang akan terintegrasi dengan approval, jika ada fitur yang sama sebaiknya digabung.
+- revisi checkbox persetujuan hukum saat kirim lamaran di karir.example.com.
+- baca dan analisa dua aplikasi akuntansi agar fiturnya bisa digabung untuk semua unit.
+
+
+List Pending:
+- check arsitektur jaringan.
+
+
+List Ongoing:

@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+/* Dark mode follows the .dark class on <html>, set from src/lib/theme.ts (system, light or dark). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: "Geist";
+  src: url("./assets/fonts/Geist-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Geist Mono";
+  src: url("./assets/fonts/GeistMono-Variable.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@theme {
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, "Cascadia Mono", monospace;
+  /* Single desaturated emerald accent. */
+  --color-accent-50: oklch(0.97 0.02 165);
+  --color-accent-100: oklch(0.93 0.035 165);
+  --color-accent-400: oklch(0.72 0.08 165);
+  --color-accent-500: oklch(0.62 0.085 165);
+  --color-accent-600: oklch(0.53 0.08 165);
+  --color-accent-700: oklch(0.45 0.07 165);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-100;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    overflow: hidden;
+    user-select: none;
+  }
+  input,
+  textarea,
+  [contenteditable] {
+    user-select: text;
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 1px;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--color-accent-500) 30%, transparent);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in oklch, currentColor 18%, transparent) transparent;
+  }
+}
+
+@utility btn {
+  @apply inline-flex h-7 items-center gap-1.5 rounded-md px-2.5 text-[12.5px] font-medium transition-[transform,background-color,color] duration-150 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-accent-600 text-white hover:bg-accent-700;
+}
+@utility btn-ghost {
+  @apply btn text-zinc-600 hover:bg-zinc-200/70 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-zinc-100;
+}
+@utility btn-outline {
+  @apply btn border border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800;
+}
+@utility field {
+  @apply w-full rounded-md border border-zinc-200 bg-white px-2.5 py-1.5 text-[13px] text-zinc-900 placeholder:text-zinc-400 transition-colors focus:border-accent-500 focus:outline-none dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-100;
+}
+@utility label {
+  @apply text-[11px] font-medium uppercase tracking-wide text-zinc-500;
+}
+@utility kbd {
+  @apply rounded border border-zinc-200 bg-zinc-100 px-1 font-mono text-[10.5px] text-zinc-500 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-400;
+}
+@utility skeleton {
+  @apply animate-pulse rounded bg-zinc-200/80 dark:bg-zinc-800/80;
+}
+
+@keyframes toast {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
